@@ -25,7 +25,6 @@ ROBO_CHEFAO_IMG = pygame.transform.scale(
 EXPLOSAO_IMG = pygame.transform.scale(
     pygame.image.load("robos/kabum.png").convert_alpha(), (150, 150))
 
-# Sons
 TIRO_SOM = pygame.mixer.Sound("som_tiro.mp3")
 EXPLOSAO_SOM = pygame.mixer.Sound("som_explosao.mp3")
 
@@ -326,7 +325,7 @@ while running:
 
     hits = pygame.sprite.groupcollide(robos, bullets, True, True)
     for r in hits:
-        player.score += 300
+        player.score += 100
         EXPLOSAO_SOM.play()
         e = Explosao(r.rect.center)
         explosions.add(e)
