@@ -333,12 +333,12 @@ while running:
         all_sprites.add(e)
 
     hits = pygame.sprite.groupcollide(easter_group, bullets, False, True)
-    for e in hits:
+    for r in hits:
         e.health -= 10
+        player.score += 500
         EXPLOSAO_SOM.play()
         if e.health <= 0:
             e.kill()
-            player.score += 500
 
     for r in list(robos):
         if r.rect.top > ALTURA:
